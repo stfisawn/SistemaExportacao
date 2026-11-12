@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Exportação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Glass Export</h1>
+        <p>Sistema de gerenciamento de exportação de copos de vidro</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Cadastrar produto</h2>
+
+            <form id="formProduto">
+                <label>Nome do produto</label>
+                <input type="text" id="nome" required>
+
+                <label>Descrição</label>
+                <input type="text" id="descricao">
+
+                <label>Preço de custo (R$)</label>
+                <input type="number" id="precoCusto" min="0.01" step="0.01" required>
+
+                <label>Quantidade em estoque</label>
+                <input type="number" id="quantidade" min="0" step="1" required>
+
+                <button type="submit">Cadastrar produto</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Produtos cadastrados</h2>
+            <div id="listaProdutos"></div>
+        </section>
+
+        <section class="card">
+            <h2>Conversão de moeda</h2>
+
+            <label>Produto</label>
+            <select id="produtoConversao">
+                <option value="">Selecione um produto</option>
+            </select>
+
+            <label>País de destino</label>
+            <select id="moeda">
+                <option value="USD">Estados Unidos (Dólar)</option>
+                <option value="EUR">União Europeia (Euro)</option>
+                <option value="GBP">Reino Unido (Libra)</option>
+                <option value="JPY">Japão (Iene)</option>
+            </select>
+
+            <button type="button" id="btnConverter">
+                Converter preço
+            </button>
+
+            <div id="resultadoConversao"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
